@@ -78,6 +78,20 @@ bindsym $mod+e layout toggle split
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
+# The middle button over a titlebar kills the window
+bindsym --release button2 kill
+
+# The middle button and a modifer over any part of the window kills the window
+bindsym --whole-window $mod+button2 kill
+
+# The right button toggles floating
+bindsym button3 floating toggle
+bindsym $mod+button3 floating toggle
+
+# The side buttons move the window around
+bindsym button9 move left
+bindsym button8 move right
+
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
@@ -92,9 +106,6 @@ bindsym $mod+a focus parent
 # ◉ ☯ ♬ ¶ § ≥ ⋯ ∅ ☀ ⚡ ♔ ▭ ▲ ► ▼ ❌ ◎ ∕ → ⊶ ▁ 
 
 set $workspace1 "1: ☯"
-
-
-{{ .USER }}
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -122,8 +133,10 @@ bindsym $mod+Shift+0 move container to workspace 10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
+
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
+
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
@@ -152,12 +165,6 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-
-# set $bg-color            #2f343f
-# set $inactive-bg-color   #2f343f
-# set $text-color          #f3f4f5
-# set $inactive-text-color #676E7D
-# set $urgent-bg-color     #E53935
 
 set $bg-color            #362E26
 set $inactive-bg-color   #362E26
@@ -213,17 +220,3 @@ setxkbmap -option 'grp:shift_alt_toggle'
 # setxkbmap -option 'grp:caps_toggle'
 
 #exec --no-startup-id "setxkbmap -layout ru,us -option grp:caps_toggle"
-
-# The middle button over a titlebar kills the window
-bindsym --release button2 kill
-
-# The middle button and a modifer over any part of the window kills the window
-bindsym --whole-window $mod+button2 kill
-
-# The right button toggles floating
-bindsym button3 floating toggle
-bindsym $mod+button3 floating toggle
-
-# The side buttons move the window around
-bindsym button9 move left
-bindsym button8 move right
