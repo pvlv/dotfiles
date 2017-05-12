@@ -1,0 +1,35 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "files.associations": {
+      "*.mk": "makefile",
+      "*.tpl": "twig",
+      "*.twig": "twig"
+    },
+    "editor.fontSize": 16,
+    "editor.tabSize": 2,
+    "renderWhitespace": true,
+    "tslint.enable": true,
+    "gist.oauth_token": "fe9c9a1342ef5326543e201339aba16763fb8bbd",
+    "vsicons.projectDetection.disableDetect": true,
+    "workbench.activityBar.visible": false,
+    "workbench.statusBar.visible": true,
+    "workbench.sideBar.location": "left",
+    "window.zoomLevel": -1,
+    "html.suggest.html5": true,
+    "emmet.syntaxProfiles": {
+      "marko": "html",
+      "tpl": "html",
+      "njk": "html",
+      "twig": "html"
+    },
+    "workbench.colorTheme": "Tomorrow_Night_Eighties",
+    "workbench.iconTheme": "vscode-icons",
+    // disable IntelliSense for twig files
+    // http://stackoverflow.com/questions/41189292/visual-studio-code-editor-disable-intellisense-for-css-files
+    "[twig]": {
+      "editor.quickSuggestions": false    
+    },
+    "prettier.singleQuote": true,
+    "files.autoSave": "off",
+    "window.menuBarVisibility": "toggle"
+  }
