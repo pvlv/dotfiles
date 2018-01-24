@@ -12,6 +12,8 @@ Plug 'cakebaker/scss-syntax.vim'
 Plug 'ekalinin/dockerfile.vim'
 Plug 'elzr/vim-json'
 Plug 'flazz/vim-colorschemes'
+Plug 'tpope/vim-commentary'
+Plug 'kien/ctrlp.vim'
 
 call plug#end()
 
@@ -41,7 +43,23 @@ set softtabstop=2   " Sets the number of columns for a TAB
 set expandtab       " Expand TABs to spaces
 
 let g:vim_json_syntax_conceal = 0
-
+let g:NERDTreeWinSize = 30
 " mappings
+
+" <Leader>f{char} to move to {char}
+map  <Leader>f <Plug>(easymotion-bd-f)
+nmap <Leader>f <Plug>(easymotion-overwin-f)
+
+" s{char}{char} to move to {char}{char}
+nmap s <Plug>(easymotion-overwin-f2)
+
+" Move to line
+map <Leader>L <Plug>(easymotion-bd-jk)
+nmap <Leader>L <Plug>(easymotion-overwin-line)
+
+" Move to word
+map  <Leader>w <Plug>(easymotion-bd-w)
+nmap <Leader>w <Plug>(easymotion-overwin-w)
+
 " nerdtree
-map <C-n> :NERDTreeToggle<CR>
+map <C-b> :NERDTreeToggle<CR>
