@@ -13,7 +13,7 @@ font pango:System San Francisco Display 10
 # The font above is very space-efficient, that is, it looks good, sharp and
 # clear in small sizes. However, its unicode glyph coverage is limited, the old
 # X core fonts rendering does not support right-to-left and this being a bitmap
-# font, it doesn’t scale on retina/hidpi displays.
+# font, it doesn't scale on retina/hidpi displays.
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -41,8 +41,7 @@ set $semicolonButtonKey semicolon
 bindsym $mod+$leftBtnKey focus left
 bindsym $mod+$downBtnKey focus down
 bindsym $mod+$upBtnKey focus up
-bindsym $mod+$rightBtnKey focus right
-
+bindsym $mod+$rightBtnKey focus right 
 # alternatively
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
@@ -105,7 +104,7 @@ bindsym $mod+a focus parent
 # http://unicodeemoticons.com/symbols_all.htm
 # ◉ ☯ ♬ ¶ § ≥ ⋯ ∅ ☀ ⚡ ♔ ▭ ▲ ► ▼ ❌ ◎ ∕ → ⊶ ▁ 
 
-set $workspace1 "1: ☯"
+set $workspace1 "1:☯"
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -144,10 +143,10 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
+        # Pressing left will shrink the window's width.
+        # Pressing right will grow the window's width.
+        # Pressing up will shrink the window's height.
+        # Pressing down will grow the window's height.
         bindsym $leftBtnKey resize shrink width 10 px or 10 ppt
         bindsym $downBtnKey resize grow height 10 px or 10 ppt
         bindsym $upBtnKey resize shrink height 10 px or 10 ppt
@@ -166,11 +165,11 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-set $bg-color            #362E26
-set $inactive-bg-color   #362E26
-set $text-color          #E3D9CE
+set $bg-color            #262322
+set $inactive-bg-color   #262322
+set $text-color          #EAEBED
 set $inactive-text-color #7D7267
-set $urgent-bg-color     #E53935
+set $urgent-bg-color     #F24236
 
 # window colors
 #                       border              background         text                 indicator
@@ -182,7 +181,8 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3blocks
+        # status_command i3blocks
+        status_command exec ~/go/src/github.com/soumya92/barista/my-bar
         colors {
             background $bg-color
             separator $inactive-text-color
@@ -196,27 +196,24 @@ bar {
 bindsym $mod+Shift+x exec i3lock --color " "
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 1 +5%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 1 -5%
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # Media player controls
+# https://wiki.archlinux.org/index.php/PulseAudio_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)
 bindsym XF86AudioPlay exec playerctl play
 bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-exec xrandr --output VGA-0 --off
-exec_always feh --bg-scale /home/user/Pictures/LIUBPxK.jpg
+# Screen brightness controls with notification
+# https://cialu.net/brightness-control-not-work-i3wm/
+bindsym XF86MonBrightnessUp exec "light -A 5"
+bindsym XF86MonBrightnessDown exec "light -U 5"
 
-# Запускать терминал при запуске
-# exec i3-sensible-terminal
-
+exec feh --bg-center /home/pvlv/Pictures/vsco_041516.jpg
 exec compton --inactive-dim 0.65 --mark-ovredir-focused
+exec --no-startup-id nm-applet
 
-# https://docs.slackware.com/howtos:window_managers:keyboard_layout_in_i3
-setxkbmap -layout ru,us
-setxkbmap -option 'grp:shift_alt_toggle'
-# setxkbmap -option 'grp:caps_toggle'
-
-#exec --no-startup-id "setxkbmap -layout ru,us -option grp:caps_toggle"
+exec --no-startup-id "setxkbmap -layout us,ru -option grp:alt_shift_toggle"

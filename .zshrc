@@ -117,42 +117,6 @@ alias gcm='git commit -m'
 alias gme='git merge'
 
 ## Utils
-function base_in() {
-  docker run --rm -it \
-    --name base_in \
-    -v $PWD:/app \
-    -v $$HOME/.node6-cache:/root/.npm \
-    -v $HOME/Modules:/modules \
-    -p 9999:5555 \
-    -w /app \
-    node:6.5 \
-    bash
-}
-
-base_exec_in() {
-  docker exec -it base_in bash
-}
-
-function base_node_frontend() {
-  docker run --rm -it \
-    --name base_node_frontend \
-    --user docker \
-    -p 9999:5555 \
-    -v $PWD:/app \
-    -v $HOME/.node6-cache:/root/.npm \
-    -v $HOME/Projects/common_modules:/common_modules \
-    -w /app \
-    pvlv/node-frontend:6.5 \
-    bash
-}
-
-base_node_frontend_exec_root_in() {
-    docker exec -it \
-    --user root \
-    base_node_frontend \
-    bash
-}
-
 fix_screen() {
     xrandr --output VGA-0 --off
 }
