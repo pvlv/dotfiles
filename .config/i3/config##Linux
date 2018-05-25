@@ -212,7 +212,7 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86MonBrightnessUp exec "light -A 5"
 bindsym XF86MonBrightnessDown exec "light -U 5"
 
-exec feh --bg-center /home/pvlv/Pictures/vsco_041516.jpg
+exec feh --bg-center $HOME/.config/i3/vim-shortcuts-dark_1366x768.png
 exec compton --inactive-dim 0.65 --mark-ovredir-focused
 exec --no-startup-id nm-applet
 exec --no-startup-id "setxkbmap -layout us,ru -option grp:alt_shift_toggle"
