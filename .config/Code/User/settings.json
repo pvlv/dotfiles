@@ -19,7 +19,7 @@
       "njk": "html",
       "twig": "html"
     },
-    "workbench.colorTheme": "Tomorrow_Night_Eighties",
+    "workbench.colorTheme": "Spacegray Eighties Dark",
     "workbench.iconTheme": "vscode-icons",
     "prettier.singleQuote": true,
     "files.autoSave": "off",
