@@ -1,10 +1,9 @@
 call plug#begin('~/.vim/plugged')
 
+Plug 'tpope/vim-sensible'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-" Plug 'bling/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
-Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/nerdcommenter'
+Plug 'easymotion/vim-easymotion'
 Plug 'jiangmiao/auto-pairs'
 Plug 'mattn/emmet-vim'
 Plug 'othree/html5.vim'
@@ -12,8 +11,14 @@ Plug 'cakebaker/scss-syntax.vim'
 Plug 'ekalinin/dockerfile.vim'
 Plug 'elzr/vim-json'
 Plug 'flazz/vim-colorschemes'
-Plug 'tpope/vim-commentary'
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'prettier/vim-prettier', { 'do': 'npm install', 'for': ['javascript', 'typescript', 'css', 'scss', 'json'] }
+Plug 'luochen1990/rainbow'
+Plug 'pangloss/vim-javascript'
+Plug 'jelera/vim-javascript-syntax'
+Plug 'mxw/vim-jsx'
+Plug 'jlanzarotta/bufexplorer'
 
 call plug#end()
 
@@ -23,18 +28,24 @@ set number
 set hlsearch
 set incsearch
 
-" Colorscheme
-set t_Co=256
-syntax enable
-colorscheme spacegray
+colorscheme Tomorrow-Night-Eighties 
+let mapleader=" "
+inoremap jj <esc>
 
-" vim-airline
-" let g:airline#extensions#tabline#enabled = 1
+" prettier
+let g:prettier#config#single_quote = 'true'
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md, PrettierAsync
 
-" Indentline
-" http://terminal-color-builder.mudasobwa.ru/
+" ctrlp
+set wildignore+=*/node_modules/*
+
+" rainbow
+let g:rainbow_active = 1
+
 let g:indentLine_color_term = 238
 let g:indentLine_char ='|'
+
 " convert tab to space
 " http://stackoverflow.com/a/1878984
 set tabstop=2
@@ -43,8 +54,14 @@ set softtabstop=2   " Sets the number of columns for a TAB
 set expandtab       " Expand TABs to spaces
 
 let g:vim_json_syntax_conceal = 0
+
+" NERDTree
 let g:NERDTreeWinSize = 30
-" mappings
+let g:NERDTreeShowHidden=1
+
+" Mappings
+
+" Easymotion
 
 " <Leader>f{char} to move to {char}
 map  <Leader>f <Plug>(easymotion-bd-f)
@@ -61,5 +78,5 @@ nmap <Leader>L <Plug>(easymotion-overwin-line)
 map  <Leader>w <Plug>(easymotion-bd-w)
 nmap <Leader>w <Plug>(easymotion-overwin-w)
 
-" nerdtree
+" NERDTree
 map <C-b> :NERDTreeToggle<CR>
