@@ -1,59 +1,55 @@
 // Place your settings in this file to overwrite the default settings
 {
-    "files.associations": {
-      "*.mk": "makefile"
-    },
-    "editor.fontFamily": "'Liberation Mono', monospace",
-    "editor.fontSize": 19,
-    "editor.tabSize": 2,
-    "tslint.enable": true,
-    "vsicons.projectDetection.disableDetect": true,
-    "workbench.activityBar.visible": false,
-    "workbench.statusBar.visible": true,
-    "workbench.sideBar.location": "left",
-    "window.zoomLevel": 0,
-    "html.suggest.html5": true,
-    "emmet.syntaxProfiles": {
-      "marko": "html",
-      "tpl": "html",
-      "njk": "html",
-      "twig": "html"
-    },
-    "workbench.colorTheme": "Spacegray Eighties Dark",
-    "workbench.iconTheme": "vscode-icons",
-    "prettier.singleQuote": true,
-    "files.autoSave": "off",
-    "window.menuBarVisibility": "visible",
-    // vim settings
-    "vim.easymotion": true,
-    "vim.incsearch": false,
-    "vim.useSystemClipboard": true,
-    "vim.useCtrlKeys": true,
-    "vim.hlsearch": true,
-    "vim.insertModeKeyBindings": [
-        {
-            "before": ["j","j"],
-            "after": ["<Esc>"]
-        }
-    ],
-    "vim.otherModesKeyBindingsNonRecursive": [
-        {
-            "before": ["<leader>","d"],
-            "after": ["d", "d"]
-        },
-        {
-            "before":["<C-n>"],
-            "after":[],
-            "commands": [
-                {
-                    "command": ":nohl"
-                }
-            ]
-        }
-    ],
-    "vim.leader": "\\",
-    "vim.handleKeys": {
-        "<C-a>": false,
-        "<C-f>": false
+  "files.associations": {
+    "*.mk": "makefile"
+  },
+  "editor.fontFamily": "'Liberation Mono', monospace",
+  "editor.fontSize": 19,
+  "editor.tabSize": 2,
+  "tslint.enable": true,
+  "editor.minimap.enabled": false,
+  "workbench.activityBar.visible": true,
+  "workbench.statusBar.visible": true,
+  "workbench.sideBar.location": "left",
+  "window.zoomLevel": 0,
+  "html.suggest.html5": true,
+  "workbench.colorTheme": "Spacegray Eighties Dark",
+  "files.autoSave": "off",
+  "window.menuBarVisibility": "visible",
+  "vim.leader": " ",
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false
+  },
+  "vim.easymotion": true,
+  "vim.incsearch": false,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "j"],
+      "after": ["<Esc>"]
     }
+  ],
+  "vim.otherModesKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "d"],
+      "after": ["d", "d"]
+    },
+    {
+      "before": ["<C-n>"],
+      "after": [],
+      "commands": [
+        {
+          "command": ":nohl"
+        }
+      ]
+    }
+  ],
+  "breadcrumbs.enabled": true,
+  "editor.renderControlCharacters": false,
+  "editor.renderWhitespace": "none",
+  "editor.formatOnSave": true,
+  "prettier.singleQuote": true
 }
