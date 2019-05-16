@@ -1,0 +1,9 @@
+alias clr='clear'
+
+# git
+alias gst='git status'
+alias gbr='git branch'
+alias gco='git checkout'
+alias gcm='git commit -m'
+alias gme='git merge'
+
