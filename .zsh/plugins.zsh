@@ -1,4 +1,4 @@
-source ~/.zplug/init.zsh
+source $ZPLUG_HOME/init.zsh
 
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "mafredri/zsh-async"

@@ -1,42 +1,75 @@
-// Place your settings in this file to overwrite the default settings
 {
   "files.associations": {
     "*.mk": "makefile"
   },
-  "editor.fontFamily": "'Liberation Mono', monospace",
-  "editor.fontSize": 19,
+  "editor.fontFamily": "Menlo, Consolas, DejaVu Sans Mono, monospace",
+  "editor.fontSize": 18,
   "editor.tabSize": 2,
-  "tslint.enable": true,
+  "editor.fontWeight": "normal",
   "editor.minimap.enabled": false,
+  "editor.quickSuggestions": true,
   "workbench.activityBar.visible": true,
   "workbench.statusBar.visible": true,
   "workbench.sideBar.location": "left",
-  "window.zoomLevel": 0,
+  "window.zoomLevel": -1,
   "html.suggest.html5": true,
-  "workbench.colorTheme": "Spacegray Eighties Dark",
   "files.autoSave": "off",
-  "window.menuBarVisibility": "visible",
+  "editor.lineNumbers": "on",
+  "vim.vimrc.enable": true,
+  "vim.vimrc.path": "/Users/i.pavlov/.vimrc",
   "vim.leader": " ",
   "vim.handleKeys": {
     "<C-a>": false,
     "<C-f>": false
   },
+  "vim.camelCaseMotion.enable": true,
+  "vim.sneak": true,
   "vim.easymotion": true,
   "vim.incsearch": false,
   "vim.useSystemClipboard": true,
   "vim.useCtrlKeys": true,
   "vim.hlsearch": true,
+  "breadcrumbs.enabled": true,
+  "editor.renderControlCharacters": false,
+  "editor.renderWhitespace": "none",
+  "editor.formatOnSave": true,
+  "prettier.singleQuote": true,
+  "prettier.printWidth": 80,
+  "typescript.validate.enable": false,
+  "javascript.validate.enable": false,
+  "workbench.iconTheme": "vscode-icons",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.colorTheme": "Spacegray Eighties Dark",
+  "vsicons.dontShowNewVersionMessage": true,
+  "settings.cycle": [
+    {
+      "id": "lineNumber",
+      "overrideWorkspaceSettings": false,
+      "values": [
+        {
+          "editor.lineNumbers": "on"
+        },
+        {
+          "editor.lineNumbers": "relative"
+        }
+      ]
+    }
+  ],
   "vim.insertModeKeyBindings": [
     {
       "before": ["j", "j"],
       "after": ["<Esc>"]
     }
   ],
-  "vim.otherModesKeyBindingsNonRecursive": [
-    {
-      "before": ["<leader>", "d"],
-      "after": ["d", "d"]
-    },
+  "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": ["<C-n>"],
       "after": [],
@@ -45,11 +78,74 @@
           "command": ":nohl"
         }
       ]
+    },
+    {
+      "before": ["i"],
+      "after": ["i"],
+      "commands": [
+        {
+          "command": "settings.cycle.lineNumber"
+        }
+      ]
+    },
+    {
+      "before": ["I"],
+      "after": ["I"],
+      "commands": [
+        {
+          "command": "settings.cycle.lineNumber"
+        }
+      ]
+    },
+    {
+      "before": ["a"],
+      "after": ["a"],
+      "commands": [
+        {
+          "command": "settings.cycle.lineNumber"
+        }
+      ]
+    },
+    {
+      "before": ["A"],
+      "after": ["A"],
+      "commands": [
+        {
+          "command": "settings.cycle.lineNumber"
+        }
+      ]
+    },
+    {
+      "before": ["o"],
+      "after": ["o"],
+      "commands": [
+        {
+          "command": "settings.cycle.lineNumber"
+        }
+      ]
+    },
+    {
+      "before": ["O"],
+      "after": ["O"],
+      "commands": [
+        {
+          "command": "settings.cycle.lineNumber"
+        }
+      ]
     }
   ],
-  "breadcrumbs.enabled": true,
-  "editor.renderControlCharacters": false,
-  "editor.renderWhitespace": "none",
-  "editor.formatOnSave": true,
-  "prettier.singleQuote": true
+  "vim.insertModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<Esc>"],
+      "after": ["<Esc>"],
+      "commands": [
+        {
+          "command": "settings.cycle.lineNumber"
+        }
+      ]
+    }
+  ],
+  "liveshare.presence": false,
+  "yaml.format.enable": false,
+  "diffEditor.renderSideBySide": false
 }

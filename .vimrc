@@ -1,8 +1,10 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-commentary'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'scrooloose/nerdcommenter'
+"Plug 'scrooloose/nerdcommenter'
+" Plug 'tpope/vim-entary'
 Plug 'easymotion/vim-easymotion'
 Plug 'jiangmiao/auto-pairs'
 Plug 'mattn/emmet-vim'
@@ -19,6 +21,10 @@ Plug 'pangloss/vim-javascript'
 Plug 'jelera/vim-javascript-syntax'
 Plug 'mxw/vim-jsx'
 Plug 'jlanzarotta/bufexplorer'
+Plug 'yuttie/comfortable-motion.vim'
+Plug 'tpope/vim-surround'
+"plug 'svermeulen/vim-cutlass'
+"Plug 'svermeulen/vim-yoink'
 
 call plug#end()
 
@@ -31,6 +37,10 @@ set incsearch
 colorscheme Tomorrow-Night-Eighties 
 let mapleader=" "
 inoremap jj <esc>
+
+" comfortabel-motion
+nnoremap <silent> <C-d> :call comfortable_motion#flick(100)<CR>
+nnoremap <silent> <C-u> :call comfortable_motion#flick(-100)<CR>
 
 " prettier
 let g:prettier#config#single_quote = 'true'
@@ -61,7 +71,21 @@ let g:NERDTreeShowHidden=1
 
 " Mappings
 
+set clipboard=unnamed
+
+nnoremap x "_x
+nnoremap d "_d
+nnoremap D "_D
+vnoremap d "_d
+
+nnoremap <leader>d ""d
+nnoremap <leader>D ""D
+vnoremap <leader>d ""d
+
 " Easymotion
+vmap <C-c> "*y     " Yank current selection into system clipboard
+nmap <C-c> "*Y     " Yank current line into system clipboard (if nothing is selected)
+nmap <C-v> "*p     " Paste from system clipboard
 
 " <Leader>f{char} to move to {char}
 map  <Leader>f <Plug>(easymotion-bd-f)
@@ -79,4 +103,4 @@ map  <Leader>w <Plug>(easymotion-bd-w)
 nmap <Leader>w <Plug>(easymotion-overwin-w)
 
 " NERDTree
-map <C-b> :NERDTreeToggle<CR>
+map <Leader>b :NERDTreeToggle<CR>

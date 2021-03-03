@@ -1,9 +1,11 @@
 [user]
 	name = Ivan Pavlov
+	email = ivanpavlovv@gmail.com
 [core]
 	autocrlf = input
 	safecrlf = false
 	editor = vim
+	excludesfile = /Users/i.pavlov/.gitignore_global
 [alias]
 	st = status
 	co = checkout
@@ -16,3 +18,11 @@
   default = simple
 [include]
   path = .gitconfig.local
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree-Alpha.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	gpgsign = true
